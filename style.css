@@ -39,6 +39,7 @@ header button {
     border: none;
     background: none;
     width: fit-content;
+    cursor: pointer;
 }
 header nav.mobile {
     position: fixed;
@@ -66,6 +67,9 @@ header .mobile a {
     color: var(--dark-blue);
     font-size: 1.125rem;
     line-height: 1.5rem;
+}
+header .desktop {
+    display: none;
 }
 main {
     max-width: 1110px;
@@ -131,6 +135,7 @@ main {
 .terceira > div {
     display: flex;
     align-items: center;
+    gap: 1.5rem;
 }
 .terceira img {
     max-width: 6.25rem;
@@ -147,12 +152,31 @@ main {
     line-height: 1.5rem;
     margin-block: 0.6rem;
 }
+.terceira a {
+    text-decoration: none;
+}
 .terceira p {
     font-size: 0.9375rem;
     line-height: 1.625rem;
     color: var(--gunmetal);
 }
 @media(min-width: 1110px) {
+    header > button {
+        display: none;
+    }
+    header .desktop {
+        display: flex;
+        gap: 2.5rem;
+    }
+    header .desktop a {
+        font-size: o.9375rem;
+        line-height: 1.625rem;
+        text-decoration: none;
+        color: var(--gunmetal);
+    }
+    header .desktop a:hover {
+        color: var(--vermillion);
+    }
     main {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -173,20 +197,18 @@ main {
     .primeira h1 {
         font-size: 3.5rem;
     }
+    .primeira button:hover {
+        background-color: var(--dark-blue);
+        cursor: pointer;
+    }
     .segunda h2 {
         font-size: 2.5rem;
     }
-    header > button {
-        display: none;
-    }
-    header .desktop {
+    .terceira {
         display: flex;
-        gap: 2.5rem;
+        grid-column: 1 / 4;
     }
-    header .desktop a {
-        font-size: o.9375rem;
-        line-height: 1.625rem;
-        text-decoration: none;
-        color: var(--gunmetal);
+    .terceira h2:hover {
+        color: var(--vermillion);
     }
 }
